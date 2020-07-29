@@ -1,4 +1,4 @@
-/**https://velog.io/@yujo/JS%ED%9E%99-%EC%A0%95%EB%A0%ACHeap-Sort-66pye5v9 */
+/** refered to https://velog.io/@yujo/JS%ED%9E%99-%EC%A0%95%EB%A0%ACHeap-Sort-66pye5v9 */
 
 let arrLen;
 
