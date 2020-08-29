@@ -22,9 +22,7 @@ function LCS(x, y) {
   let yLength = y.length;
   let res = [];
   for (let k = 0; k <= xLength; k++) {
-    if (!res[k]) {
-      res[k] = [];
-    }
+    res[k] = [];
   }
 
   for (let i = 0; i <= xLength; i++) {
