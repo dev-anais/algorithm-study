@@ -38,4 +38,32 @@ function LCS(x, y) {
   }
   return res[xLength][yLength];
 }
-LCS("ABCBDAB", "BDCABA"); // 4
+
+/** 배낭 문제: 무게 제한이 있는 배낭에 가능한한 최고의 가치를 갖는 물건을 담는 방법 */
+
+let item = [
+  [1, 60, 10],
+  [2, 100, 20],
+  [3, 120, 30],
+];
+function zeroOneKnapsack(item, cap) {
+  let res = [];
+  for (let i = 0; i <= item.length; i++) {
+    res[i] = [];
+  }
+  for (i = 0; i <= item.length; i++) {
+    for (let j = 0; j <= cap; j++) {
+      if (i == 0 || j == 0) {
+        res[i][j] = 0;
+      } else if (item[i - 1][2] > j) {
+        res[i][j] = res[i - 1][j];
+      } else {
+        res[i][j] = Math.max(
+          res[i - 1][j],
+          res[i - 1][j - item[i - 1][2]] + item[i - 1][1]
+        );
+      }
+    }
+  }
+  return res[item.length][cap];
+}
